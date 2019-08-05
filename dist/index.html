@@ -1,0 +1,33 @@
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <link href="./svg.css" rel="stylesheet">
+        <link href="./tabs.css" rel="stylesheet">
+    </head>
+    <body>
+        <tab-container>
+            <div role="tablist">
+                <button type="button" role="tab">Geography</button>
+                <button type="button" role="tab">Seats</button>
+            </div>
+            <div role="tabpanel">
+                <div class="svg-container" text-align="center">
+                    <svg id="geographic-svg"></svg>
+                    <code style="font-size:10" id="democrats"></code>
+                    <code style="font-size:10"> ··· </code>
+                    <code style="font-size:10" id="republicans"></code>
+                </div>
+            </div>
+            <div role="tabpanel" hidden>
+                <div class="svg-container" text-align="center">
+                    <svg id="seats-svg"></svg>
+                </div>
+                <code style="font-size:10;">
+                    Click to add or remove edges. Scroll to shuffle the parties
+                    of a random number of Representatives.
+                </code>
+            </div>
+        </tab-container>
+        <script src="bundle.js"></script>
+    </body>
+</html>
