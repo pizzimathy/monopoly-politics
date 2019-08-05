@@ -1,0 +1,25 @@
+{
+    "name": "monopoly-politics",
+    "version": "0.0.1",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "copy": "cp ./src/*.css ./dist/",
+        "pack": "webpack --mode development --config webpack.config.js",
+        "open": "open ./dist/index.html",
+        "build:dev": "npm run pack && npm run copy && npm run open"
+    },
+    "keywords": [],
+    "author": "Anthony Pizzimenti",
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^4.38.0",
+        "webpack-cli": "^3.3.6"
+    },
+    "dependencies": {
+        "@github/tab-container-element": "^3.0.4",
+        "d3": "^5.9.7",
+        "lodash": "^4.17.15",
+        "superagent": "^5.1.0"
+    }
+}
