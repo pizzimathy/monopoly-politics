@@ -158,7 +158,7 @@ function seat_chart() {
  * @desc Callback for returning a function to adjust node positions in the svg.
  * @param {object} node d3 node collection object.
  * @param {object} link d3 link collection object.
- * @returns {function} Gunction for updating node positions in the svg.
+ * @returns {function} Function for updating node positions in the svg.
  */
 function tick_actions(node, link) {
     return () => {
