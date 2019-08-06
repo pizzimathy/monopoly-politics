@@ -3,7 +3,7 @@
     <head>
         <link href="./svg.css" rel="stylesheet">
         <link href="./tabs.css" rel="stylesheet">
-    </head>
+        </head>
     <body>
         <tab-container>
             <div role="tablist">
@@ -11,7 +11,7 @@
                 <button type="button" role="tab">Seats</button>
             </div>
             <div role="tabpanel">
-                <div class="svg-container" text-align="center">
+                <div id="geographic" class="svg-container" text-align="center">
                     <svg id="geographic-svg"></svg>
                     <code style="font-size:10" id="democrats"></code>
                     <code style="font-size:10"> ··· </code>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div role="tabpanel" hidden>
-                <div class="svg-container" text-align="center">
+                <div id="seats" class="svg-container" text-align="center">
                     <svg id="seats-svg"></svg>
                 </div>
                 <code style="font-size:10;">
