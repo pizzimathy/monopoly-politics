@@ -122,9 +122,6 @@ function seat_chart() {
         .attr("r", 5)
         .attr("fill", (d) => d.color);
 
-    // Add some hover text.
-    node.append("title").text((d) => d.id);
-
     // Add links. Basically the same thing as adding nodes.
     var link = svg
         .append("g")
@@ -150,6 +147,36 @@ function seat_chart() {
     simulation.on("tick", tick_actions(node, link));
     svg.on("mouseup", which_redraw);
     svg.on("wheel", shuffle(simulation, svg, graph, node));
+
+    // Create tooltips!
+    seats_tooltips(svg, node);
+}
+
+
+/**
+ * @author Anthony Pizzimenti
+ * @desc Creates a tooltip info box which is positioned over a seats chart
+ * node when hovered.
+ * @param {object} svg d3 svg element.
+ * @returns {undefined}
+ */
+function seats_tooltips(svg) {
+    // Create tooltip div *on the parent of the svg*.
+    const tooltip = d3.select("#seats")
+        .append("div")
+        .attr("class", "tooltip");
+
+    // For each circle (i.e. each node), add two events: mouseover and mouseout.
+    svg.selectAll("circle")
+        .on("mouseover", (d) => {
+            tooltip
+                .style("display", "block")
+                .style("top", (d3.event.layerY + 10) + "px")
+                .style("left", d3.event.layerX + "px")
+                .html(d.id + "</br>" + d.state);
+        }).on("mouseout", (d) => {
+            tooltip.style("display", "none");
+        });
 }
 
 
@@ -309,6 +336,42 @@ function map_chart() {
 
     // Modify the party member counts.
     count_party_members(CongressMapData);
+
+    // Add tooltips.
+    map_tooltips(svg, path, CongressMapData);
+}
+
+
+/**
+ * @author Anthony Pizzimenti
+ * @desc Creates a tooltip info box which is positioned over a geography chart
+ * element when hovered.
+ * @param {object} svg d3 svg element.
+ * @returns {undefined}
+ */
+function map_tooltips(svg) {
+    const tooltip = d3.select("#geographic")
+        .append("div")
+        .attr("class", "tooltip"),
+        right_edge = document.getElementById("geographic").offsetWidth;
+
+    // Add a tooltip for whatever we want.
+    svg.selectAll("path")
+        .on("mouseover", (d) => {
+            // Calculate the offset; determine whether we want the tooltip to
+            // go left or right.
+            const lpos = +d3.event.layerX + 100,
+                xpos = lpos > right_edge ? lpos - 250 : +d3.event.layerX;
+
+            tooltip
+                .style("display", "block")
+                .style("top", (d3.event.layerY + 10) + "px")
+                .style("left", xpos + "px")
+                .html(d.properties.Incumbent + "</br>" + d.properties.District);
+        }).on("mouseout", (d) => {
+            tooltip
+                .style("display", "none");
+        });
 }
 
 
