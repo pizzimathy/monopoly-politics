@@ -12,8 +12,23 @@
 svg {
     display: block;
     margin: 0 auto;
+    overflow: auto;
 }
 
 .svg-container {
     padding: 5px;
+}
+
+.tooltip {
+    background: #eee;
+    border: 1px solid #d8d8d8;
+    position: absolute;
+    display: none;
+    padding: 2px;
+    width: auto;
+}
+
+/* Add a hover thing specific to the states on the geographic maps. */
+#geographic-svg path:hover {
+    opacity: 0.7;
 }

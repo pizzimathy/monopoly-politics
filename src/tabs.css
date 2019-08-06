@@ -82,7 +82,7 @@ body {
     margin: 0 auto;
     width: 50%;
     height: auto;
-    overflow: hidden;
+    overflow: visible;
   }
   
   [role="tabpanel"]:focus {
