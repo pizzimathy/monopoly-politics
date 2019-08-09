@@ -4,7 +4,8 @@
     "description": "",
     "private": true,
     "scripts": {
-        "copy": "cp ./src/*.css ./dist/",
+        "ifne": "if [ -d ./dist/ ] ; then echo \"nothing\"; else mkdir dist; fi",
+        "copy": "npm run ifne && cp ./src/*.css ./dist/ && cp ./src/index.html ./dist/",
         "pack": "webpack --mode development --config webpack.config.js",
         "open": "open ./dist/index.html",
         "build:dev": "npm run pack && npm run copy && npm run open"
