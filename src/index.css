@@ -1,0 +1,46 @@
+
+/* Styles the div below the tab container. */
+.control-panel {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid hsl(219, 1%, 72%);
+    border-radius: 0 .2em .2em .2em;
+    box-shadow: 0 0 .2em hsl(219, 1%, 72%);
+    background: hsl(220, 43%, 99%);
+    border-top: none !important;
+}
+
+.control-panel input {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* webkit styles */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 20px;
+    background-image: linear-gradient(to right, blue, red);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 25px;
+    width: 10px;
+    border-radius: 5%;
+    background-color: white;
+    border: 1px solid #d8d8d8;
+}
+
+/* mozilla styles */
+input[type="range"]::-moz-range-track {
+    height: 20px;
+    background-image: linear-gradient(to right, blue, red);
+}
+
+input[type="range"]::-moz-range-thumb {
+    height: 25px;
+    width: 10px;
+    border-radius: 5%;
+    background-color: white;
+    border: 1px solid #d8d8d8;
+}
