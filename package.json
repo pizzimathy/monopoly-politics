@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "@github/tab-container-element": "^3.0.4",
-        "d3": "^5.9.7",
+        "d3": "^7.6.1",
         "lodash": "^4.17.15",
         "superagent": "^5.1.0"
     }
